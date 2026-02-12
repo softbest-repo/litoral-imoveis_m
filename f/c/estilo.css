@@ -1,0 +1,737 @@
+* {margin:0; padding:0; list-style:none; color:#000; font-size:14px; }
+
+
+img {border:none;}
+a {text-decoration:none;}
+:hover {-webkit-transition: all .2s; -moz-transition: all .2s; -ms-transition: all .2s; -o-transition: all .2s; transition: all .2s;}
+
+.clear {clear:both;}
+.oculto {display:none;}
+option {color:#000;}
+
+body {width:100%; height:100%; overflow-x:hidden;}
+
+p {white-space:normal; overflow-wrap:break-word; word-wrap:break-word;}
+
+#tudo {width:100%;}
+#tudo .blackout {width:100%; height:100%; position:fixed; top:0; left:0; z-index:100000000; background:rgba(0,0,0,0.7);}
+#tudo #popup {width:330px; position:fixed; padding:30px 0px; z-index:100000001; left:50%; top:50%; margin-left:-163px; margin-top:-175.5px; background-color:#40c351; border-radius:10px;}
+#tudo #popup .x {width:28px; height:26px; position:absolute; padding-top:0px; margin-left:313px; margin-top:-42px; cursor:pointer; text-align:center; background-color:#004018; color:#FFF; font-size:15px; font-weight:bold; border-radius:100%; transition: all .2s;display: flex; align-items: center; justify-content: center;}
+#tudo #popup .x:hover {background-color:#035e25; transition: all .2s;}
+#tudo #popup .logo {display:table; margin:0 auto;}
+#tudo #popup .titulo {font-size:18px; line-height:25px; color:#FFF; text-align:center; font-weight:600; margin-top:15px; margin-bottom:10px; }
+#tudo #popup .titulo span {font-size:18px; color:#FFF; font-weight:800; }
+#tudo #popup .titulo2 {font-size:13px; color:#FFF; text-align:center; margin-bottom:20px; }
+#tudo #popup .campo-nome {display:table; margin:0 auto; }
+#tudo #popup .campo-nome input {width:270px; border:none; padding:7px 10px; outline:none; border-radius:5px; }
+#tudo #popup .campo-whats {display:table; margin:0 auto; margin-top:15px;}
+#tudo #popup .campo-whats input {width:270px; border:none; padding:7px 10px; outline:none; border-radius:5px; }
+#tudo #popup .campos-mensagem {display:table; margin:0 auto; margin-top:15px;}
+#tudo #popup .campos-mensagem textarea {width:270px; border:none; height:50px; padding:5px 10px; outline:none; border-radius:5px;}
+#tudo #popup .botao-envia {display:table; margin:0 auto; margin-top:15px;}
+#tudo #popup .botao-envia input {padding:7px 20px; display:table; margin:0 auto; cursor:pointer; padding-left:35px; color:#FFF; font-weight:400; font-size:13px; border:none; background: url(../i/quebrado/whatsapp.svg) 12px center, linear-gradient(#004018, #017a2f); background-repeat:no-repeat, repeat; background-size:18px, cover; border-radius:15px; transition: all .3s; }
+#tudo #popup .botao-envia input:hover {background: url(../i/quebrado/whatsapp.svg) 12px center, linear-gradient(#017a2f, #004018); background-repeat:no-repeat, repeat; background-size:18px, cover; background-size:18px; transition: all .3s; }
+
+#tudo #topo {position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;}
+#tudo #topo .normal { background-color: #00355D;  transition: all .3s; box-shadow: 3px 4px 13px 0px #00000069;}
+#tudo #topo .normal #conteudo-topo {padding: 10px 3%; transition: all .3s;}
+#tudo #topo .normal #conteudo-topo #ld-esq {width:70px; position:relative; z-index:10; align-self: center; transition: all .3s;}
+#tudo #topo .normal #conteudo-topo #ld-esq #logo-topo {width:70px; transition: all .3s;}
+#tudo #topo .normal #conteudo-topo #ld-esq #logo-topo .logo a {width:70px; display:block; transition: all .3s;}
+#tudo #topo .normal #conteudo-topo #ld-dir {}
+#tudo #topo .normal #conteudo-topo .icone-menu { display: flex; justify-content: end;  margin-top: 14px; transition: all .3s; }
+#tudo #topo .normal #conteudo-topo .icone-menu img {width: 24px; transition: all .3s; }
+#tudo #topo .normal #conteudo-topo #ajuste-menu {position: absolute; right: 3%; top: 77px; transition: all .3s; z-index: 400;}
+#tudo #topo .normal #conteudo-topo #ajuste-menu #menu #mostra-menu {width:165px; position:absolute; padding:10px 15px; z-index:50; right:3%;   background:#00355D; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; border-radius: 0px 0px 20px 20px }
+#tudo #topo .normal #conteudo-topo #ajuste-menu #menu #mostra-menu p {text-align:right;}
+#tudo #topo .normal #conteudo-topo #ajuste-menu #menu #mostra-menu p a {display:block; padding-top:6px; font-weight: 400; padding-bottom:6px; font-size:14px; color:#ffffff; transition:.2s linear;}
+#tudo #topo .normal #conteudo-topo #ajuste-menu #menu #mostra-menu .ativo a {display:block; font-weight: 400; text-decoration:underline; transition:.2s linear;  color:#ff6801;}
+#tudo #topo .normal #conteudo-topo #redes {display: flex; gap:5px;}
+#tudo #topo .normal #conteudo-topo #redes #whats { cursor: pointer; color: white;  padding: 15px 12px; background: transparent url('../i/quebrado/whatsapp.svg') center center no-repeat; background-size: 25px; transition:.2s linear; }
+#tudo #topo .normal #conteudo-topo #redes #facebook { color: white; padding: 15px 12px; background: transparent url('../i/quebrado/facebook.svg') center center no-repeat; background-size: 25px; transition:.2s linear; }
+#tudo #topo .normal #conteudo-topo #redes #instagram { color: white; padding: 15px 12px; background: transparent url('../i/quebrado/insta.svg') center center no-repeat; background-size: 25px;  transition:.2s linear; }
+#tudo #topo .interno { background-color: #00355D;  transition: all .3s; box-shadow: 3px 4px 13px 0px #00000069;}
+#tudo #topo .interno #conteudo-topo {padding: 10px 3%; transition: all .3s;}
+#tudo #topo .interno #conteudo-topo #ld-esq {width:70px; position:relative; z-index:10; align-self: center; transition: all .3s;}
+#tudo #topo .interno #conteudo-topo #ld-esq #logo-topo {width:70px; transition: all .3s;}
+#tudo #topo .interno #conteudo-topo #ld-esq #logo-topo .logo a {width:70px; display:block; transition: all .3s;}
+#tudo #topo .interno #conteudo-topo #ld-dir {}
+#tudo #topo .interno #conteudo-topo .icone-menu { display: flex; justify-content: end;  margin-top: 14px;  transition: all .3s;}
+#tudo #topo .interno #conteudo-topo .icone-menu img {width: 24px; transition: all .3s; }
+#tudo #topo .interno #conteudo-topo #ajuste-menu {position: absolute; right: 3%; top: 77px; transition: all .3s; z-index: 400;}
+#tudo #topo .interno #conteudo-topo #ajuste-menu #menu #mostra-menu {width:165px; position:absolute; padding:10px 15px; z-index:50; right:3%;   background:#00355D; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; border-radius: 0px 0px 20px 20px }
+#tudo #topo .interno #conteudo-topo #ajuste-menu #menu #mostra-menu p {text-align:right;}
+#tudo #topo .interno #conteudo-topo #ajuste-menu #menu #mostra-menu p a {display:block; padding-top:6px; font-weight: 400; padding-bottom:6px; font-size:14px; color:#ffffff; transition:.2s linear;}
+#tudo #topo .interno #conteudo-topo #ajuste-menu #menu #mostra-menu .ativo a {display:block; font-weight: 400; text-decoration:underline; transition:.2s linear;  color:#ff6801;}
+#tudo #topo .interno #conteudo-topo #redes {display: flex; gap:5px;}
+#tudo #topo .interno #conteudo-topo #redes #whats { cursor: pointer; color: white;  padding: 15px 12px; background: transparent url('../i/quebrado/whatsapp.svg') center center no-repeat; background-size: 25px; transition:.2s linear; }
+#tudo #topo .interno #conteudo-topo #redes #facebook { color: white; padding: 15px 12px; background: transparent url('../i/quebrado/facebook.svg') center center no-repeat; background-size: 25px; transition:.2s linear;}
+#tudo #topo .interno #conteudo-topo #redes #instagram { color: white; padding: 15px 12px; background: transparent url('../i/quebrado/insta.svg') center center no-repeat; background-size: 25px; transition:.2s linear; }
+#tudo #topo .scroll { background-color: #00355D;  transition: all .3s; box-shadow: 3px 4px 13px 0px #00000069;}
+#tudo #topo .scroll #conteudo-topo {padding: 10px 3%; transition: all .3s;}
+#tudo #topo .scroll #conteudo-topo #ld-esq {width:50px; position:relative; z-index:10; align-self: center; transition: all .3s;}
+#tudo #topo .scroll #conteudo-topo #ld-esq #logo-topo {width:50px; transition: all .3s;}
+#tudo #topo .scroll #conteudo-topo #ld-esq #logo-topo .logo a {width:50px; display:block; transition: all .3s;}
+#tudo #topo .scroll #conteudo-topo #ld-dir {}
+#tudo #topo .scroll #conteudo-topo .icone-menu { display: flex; justify-content: end;  margin-top: 3px; transition: all .3s; }
+#tudo #topo .scroll #conteudo-topo .icone-menu img {width: 20px; transition: all .3s; }
+#tudo #topo .scroll #conteudo-topo #ajuste-menu {position: absolute; right: 3%; top: 64px; transition: all .3s; z-index: 400;}
+#tudo #topo .scroll #conteudo-topo #ajuste-menu #menu #mostra-menu {width:165px; position:absolute; padding:10px 15px; z-index:50; right:3%;   background:#00355D; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; border-radius: 0px 0px 20px 20px }
+#tudo #topo .scroll #conteudo-topo #ajuste-menu #menu #mostra-menu p {text-align:right;}
+#tudo #topo .scroll #conteudo-topo #ajuste-menu #menu #mostra-menu p a {display:block; padding-top:6px; font-weight: 400; padding-bottom:6px; font-size:14px; color:#ffffff; transition:.2s linear;}
+#tudo #topo .scroll #conteudo-topo #ajuste-menu #menu #mostra-menu .ativo a {display:block; font-weight: 400; text-decoration:underline; transition:.2s linear;  color:#ff6801;}
+#tudo #topo .scroll #conteudo-topo #redes {display: flex; gap:5px;}
+#tudo #topo .scroll #conteudo-topo #redes #whats { cursor: pointer; color: white; padding: 12px 10px; background: transparent url('../i/quebrado/whatsapp.svg') center center no-repeat; background-size: 20px; transition:.2s linear; }
+#tudo #topo .scroll #conteudo-topo #redes #facebook { color: white; padding: 12px 10px; background: transparent url('../i/quebrado/facebook.svg') center center no-repeat; background-size: 20px; transition:.2s linear; }
+#tudo #topo .scroll #conteudo-topo #redes #instagram { color: white; padding: 12px 10px; background: transparent url('../i/quebrado/insta.svg') center center no-repeat; background-size: 20px;  transition:.2s linear; }
+
+#tudo #conteudo{width: 100%;}
+#tudo #conteudo #repete-conteudo {width: 100%; }
+#tudo #conteudo #repete-conteudo #repete-banners {width:100%; }
+#tudo #conteudo #repete-conteudo #repete-banners li {width:100%; }
+#tudo #conteudo #repete-conteudo #repete-banners #titulo p { font-size: 16px; color: white; line-height: 130%;}
+#tudo #conteudo #repete-conteudo #repete-banners #titulo strong { font-size: 16px; color: white; line-height: 130%;}
+#tudo #conteudo #repete-conteudo #repete-banners #titulo span { font-size: 16px; line-height: 130%;}
+#tudo #conteudo #repete-conteudo #repete-banners #descricao { border-top: 1px solid #ffffff78; margin-top: 5px; padding-top: 5px;}
+#tudo #conteudo #repete-conteudo #repete-banners #descricao p{text-align: center;  color: white; line-height: 130%;  font-size: 10px;}
+#tudo #conteudo #repete-conteudo #repete-banners #botao{display: table; background: #81efee; color: #000000; padding: 9px 25px; font-size: 16px; font-weight: 500; transition: all .3s; cursor: pointer; border-radius: 50px; box-shadow: 0px 0px 20px 2px #00000069;}
+#tudo #conteudo #repete-conteudo #repete-banners #beneficios{display: flex; text-decoration: underline; cursor: pointer; font-size: 18px; align-items: center; color: white; background: transparent url(../i/quebrado/seta.png) right center no-repeat; background-size: 20px; padding-right: 30px; }
+
+#repete-filtro {width:100%;}
+#repete-filtro #conteudo-filtro {}
+#repete-filtro #conteudo-filtro #filtro {width:100%;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro {width:100%;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #filtra-tipoImovel { display: flex; flex-wrap: wrap;  gap: 5px 2px; justify-content: center;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #filtra-tipoImovel .tipo-imovel { padding: 5px 10px 5px 10px; cursor: pointer; text-align: center; color: #FFF; font-weight: 300; font-size: 13px; background: #929292; border-radius: 10px 10px 10px 10px; transition: all .3s;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #filtra-tipoImovel .tipo-imovel:hover {background: #ff6801; transition: all .3s;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #filtra-tipoImovel .tipo-imovel-ativo {padding:5px 10px 5px 10px; cursor:pointer; text-align:center; color:#FFF; font-weight:300; font-size:13px;background: #ff6801; border-radius:10px 10px 10px 10px; transition: all .3s;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #filtrar-codigo {display:flex; justify-content: center;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #filtrar-codigo .campo-codigo{display:flex; justify-content: center; width: 100%;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #filtrar-codigo .campo-codigo input {color: #ffffff; font-size: 17px; padding: 0px 10px; font-weight: 300; background: transparent; border: none; }
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #filtrar-codigo .campo-codigo input::placeholder {font-size:15px; color:#ffffff; border-bottom: 1px solid white;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros { padding: 10px 10px; background-color: #00355dd9; border-radius: 20px 20px 20px 20px; margin-top: 5px;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros select {width:140px; height:35px; cursor:pointer; font-size:15px; position:relative; z-index:31; font-weight:500; outline:none; color:#ffffff; background:transparent; border:none;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros select option  {color:#111111; font-size:14px;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros .campo-select {position:relative; height:45px;  background-color:#ffffff00; display: flex; align-items: center;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros .campo-select:before {content:""; display:inline-block; cursor:pointer; z-index:30; vertical-align:middle; position:absolute;  right:7px; width:14px; height:14px; background:transparent url('../i/quebrado/down.png') center center no-repeat; background-size:12px;  transition:.2s linear;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros .select2-selection {height:35px; overflow-y:auto; padding-left:10px; color:#444; font-size:15px; outline:none; padding-right:15px; cursor:pointer; border:none; background:none; border-radius:0px; align-items: center; display: flex;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros .select2-selection input::placeholder {color:#313237; font-size:15px; font-weight:500;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros  #carrega-bairro .select2-selection .select2-selection__clear { margin-right: 5px; margin-top: 0px; color: white; float: none; position: absolute; left: -4px; z-index: 1000;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros  .cidade .select2-selection .select2-selection__clear { margin-right: 5px; margin-top: 0px; color: white; float: none; position: absolute; left: 0px; z-index: 1000;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros .select2-selection .select2-selection__choice {margin-top:0px;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros .select2-selection .select2-selection__rendered {padding:0px; color: #ffffff !important; }
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros .select2-selection .select2-search {}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros .label {font-size:13px; display:block; line-height:13px; margin-bottom:5px;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros .botao-buscar {align-items: center;display: flex; padding: 0px 15px; justify-content: center;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros .botao-buscar input {cursor:pointer; padding: 8px 70px 8px 85px; font-size:15px; color:#FFF; border:none; background:#ff6801  url('../i/quebrado/lupa.png') 60px  center no-repeat; background-size:20px; border-radius:8px; transition: all .2s;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros .botao-buscar input:hover {background:#ff954c  url('../i/quebrado/lupa.png') 60px  center no-repeat; background-size:20px; transition: all .2s;}
+.select2-container--default .select2-selection--single .select2-selection__rendered {color: #313237!important; font-size: 15px!important; font-weight: 500!important;}
+.select2-container--default .select2-selection--single .select2-selection__arrow {display: none!important;}
+.select2-container--default .select2-search--inline .select2-search__field::placeholder{ color: #ffffff !important; font-size: 17px!important; font-weight: 300!important; }
+.select2-container .select2-search--inline .select2-search__field { margin-top: 0px!important;}
+.select-cidade + .select2-container .select2-selection__arrow{ display: none; }
+.select-cidade + .select2-container .select2-selection--single{padding-right: 10px;}
+.select-cidade + .select2-container .select2-selection__placeholder{ color: #ffffff !important; font-size: 17px; font-weight: 300;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros #carrega-bairro .select2-selection__rendered {display: flex;}
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #outros-filtros #carrega-bairro .select2-selection__rendered {display: flex;}
+#ordenar_preco + .select2-container .select2-dropdown{ min-width: 10px !important; width: 10px !important; }
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #filtrar-ordenar { cursor: pointer; padding: 6px 10px 6px 10px; font-size: 17px !important; color: #ffffff !important; font-weight: 300 !important; border: none;   }
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #filtrar-ordenar select { color: #ffffff !important; font-size: 17px !important; font-weight: 300 !important; background: url('../i/quebrado/down.png') right center no-repeat; background-size: 12px; appearance: none; -webkit-appearance: none; -moz-appearance: none; cursor: pointer; }
+#repete-filtro #conteudo-filtro #filtro #bloco-filtro #filtrar-ordenar select::-ms-expand { display: none;}
+
+#tudo #conteudo #repete-conteudo #repete-imoveis {padding: 20px 3%;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis {}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #bloco-titulo { width: 100%; margin-bottom: 30px; }
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #bloco-titulo .titulo { font-size: 32px; font-weight: 500; color:#003b5d; line-height: 100%;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #bloco-titulo .titulo span{ font-size: 32px; font-weight: 300; color:#003b5d; line-height: 100%;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #bloco-titulo .subtitulo { font-size: 16px; color:#666; font-weight: 400; line-height: 100%; margin-top: 20px; margin-bottom: 15px;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis { margin: 0 auto; margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;} 
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel{ width:100%; position:relative; background-color:#FFF; border: 1px solid #e5e5e5; border-radius: 20px; overflow: hidden; transition: transform .35s ease, box-shadow .35s ease;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel:hover{  box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, .15);}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel { height:200px; overflow:hidden; display: flex;  }
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #dMar {}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #dMar #dMar-destaque { background: #ff6801; transform: rotate(336deg); display: inline-block; position: relative; top: 10px; left: -45px; padding: 3px  50px; width: 75px; font-size: 10px; color: white;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #topo-img { height: fit-content; margin: 15px; gap: 5px; width: 100%; display: flex; justify-content: end;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #topo-img div { padding: 11px; border-radius: 6px; transition: all .3s linear;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #topo-img .favoritos:hover { background: #ff6801  url('../i/quebrado/fav.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #topo-img .favoritos.ativo { background: #ff6801  url('../i/quebrado/fav.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #topo-img #detalhes:hover { background: #ff6801  url('../i/quebrado/olho.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #bloco-nome { margin: 10px 0px;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #bloco-nome .nome { font-size: 20px; font-weight: 500; line-height: 100%; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel .cidade { font-size:13px; padding-left:17px; color:#444; background:transparent url('../i/quebrado/local.svg') left center no-repeat; background-size:15px;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones {}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones {display: flex; gap: 15px; margin-top: 15px ;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones .tipo {font-size: 12px; font-weight: 500; color: #444; border-right: 1px solid #666; padding-right: 10px; background: transparent url('../i/quebrado/casa.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;} 
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones .quartos {font-size: 12px; font-weight: 500;font-weight: 500; color: #444; background: transparent url('../i/quebrado/quarto.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones .banheiros {font-size: 12px; font-weight: 500; color: #444;  background: transparent url('../i/quebrado/banheiro.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones .garagem {font-size: 12px; font-weight: 500; color: #444; background: transparent url('../i/quebrado/garagem.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones .area {font-size: 12px; color: #444; background: transparent url('../i/quebrado/tamanho.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #preco{ padding: 15px; display: flex; justify-content: space-between;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #preco .preco{ font-size: 22px; font-weight: 500;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis #mostra-imoveis #bloco-imovel #preco .cod{ font-size: 14px; font-weight: 500; color:#666; align-items: center; display: flex;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis .ver-todos {display:table; margin:0 auto;  margin-top: 30px;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis .ver-todos a { display: block; font-size: 12px; color: #FFF; padding: 7px 30px; background-color: #FE6700; border-radius: 8px; transition: .3s linear;}
+#tudo #conteudo #repete-conteudo #repete-imoveis #conteudo-imoveis .ver-todos a:hover {background-color:#ff954c; transition:.3s linear;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades { padding: 20px 3%; margin-top: 10px; background-color: #F4F4F4;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades {}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #bloco-titulo { }
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #bloco-titulo .titulo { font-size: 32px; font-weight: 500; color:#003b5d; line-height: 100%;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #bloco-titulo .titulo span{ font-size: 32px; font-weight: 300; color:#003b5d; line-height: 100%;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #bloco-titulo .subtitulo { font-size: 16px; color:#666; font-weight: 400; line-height: 100%; margin-top: 15px; margin-bottom: 20px;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;} 
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel{ width:100%; position:relative; background-color:#FFF; border: 1px solid #e5e5e5; border-radius: 20px; overflow: hidden; transition: transform .35s ease, box-shadow .35s ease;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel:hover{  box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, .15);}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel .imagem-imovel { height:200px; overflow:hidden; display: flex;  }
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel .imagem-imovel #dMar {}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel .imagem-imovel #dMar #dMar-destaque { background: #ff6801; transform: rotate(336deg); display: inline-block; position: relative; top: 10px; left: -45px; padding: 3px  50px; width: 75px; font-size: 10px; color: white;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel .imagem-imovel #topo-img { height: fit-content; margin: 15px; gap: 5px; width: 100%; display: flex; justify-content: end;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel .imagem-imovel #topo-img div { padding: 11px; border-radius: 6px; transition: all .3s linear;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel .imagem-imovel #topo-img .favoritos:hover { background: #ff6801  url('../i/quebrado/fav.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel .imagem-imovel #topo-img .favoritos.ativo { background: #ff6801  url('../i/quebrado/fav.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel .imagem-imovel #topo-img #detalhes:hover { background: #ff6801  url('../i/quebrado/olho.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #bloco-nome { margin: 10px 0px;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #bloco-nome .nome { font-size: 20px; font-weight: 500; line-height: 100%; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel .cidade { font-size:13px; padding-left:17px; color:#444; background:transparent url('../i/quebrado/local.svg') left center no-repeat; background-size:15px;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #icones {}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #icones #alinha-icones {display: flex; gap: 15px; margin-top: 15px ;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #icones #alinha-icones .tipo {font-size: 12px; font-weight: 500; color: #444; border-right: 1px solid #666; padding-right: 10px; background: transparent url('../i/quebrado/casa.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;} 
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #icones #alinha-icones .quartos {font-size: 12px; font-weight: 500;font-weight: 500; color: #444; background: transparent url('../i/quebrado/quarto.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #icones #alinha-icones .banheiros {font-size: 12px; font-weight: 500; color: #444;  background: transparent url('../i/quebrado/banheiro.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #icones #alinha-icones .garagem {font-size: 12px; font-weight: 500; color: #444; background: transparent url('../i/quebrado/garagem.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #icones #alinha-icones .area {font-size: 12px; color: #444; background: transparent url('../i/quebrado/tamanho.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #preco{ padding: 15px; display: flex; justify-content: space-between;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #preco .preco{ font-size: 22px; font-weight: 500;}
+#tudo #conteudo #repete-conteudo #repete-oportunidades #conteudo-oportunidades #mostra-oportunidades #bloco-imovel #preco .cod{ font-size: 14px; font-weight: 500; color:#666; align-items: center; display: flex;}
+#tudo #conteudo #repete-conteudo #repete-bairros {padding: 20px  3%; background: url('../i/quebrado/fundo-bairros.jpg') center center no-repeat; background-size: cover;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros {}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #bloco-titulo { }
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #bloco-titulo .titulo { font-size: 32px; font-weight: 500; color:#003b5d; line-height: 100%; text-align:center;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #bloco-titulo .titulo span{ font-size: 32px; font-weight: 300; color:#003b5d; line-height: 100%;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #bloco-titulo .subtitulo { font-size: 16px; color:#666; font-weight: 400; line-height: 100%; margin-top: 15px; margin-bottom: 40px; text-align: center;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros {margin-top:10px;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros { background-color:#FFF; border-radius: 10px;  transition: all .5s;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros #fundo{height: 320px; border-radius: 10px;  position: relative; overflow: hidden;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros #topo-img { margin: 5px 0px; gap: 5px; width: 100%; display: flex; justify-content: end;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros #topo-img div { padding: 11px; border-radius: 6px; margin-right: 10px; margin-top: 10px; transition: all .3s linear;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros:hover #topo-img .detalhes { background: #ff6801  url('../i/quebrado/olho.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros #fundo #sombra{ height: 248px; display: grid; align-content: end; position: relative; z-index: 2; padding: 15px}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros #fundo::after{ content: ""; position: absolute; inset: 0; background: linear-gradient( to top, #00233f 21%, rgba(0, 59, 93, 0) 64%);opacity: 1; transition: opacity .5s ease; z-index: 1; }
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros #fundo:hover::after{ opacity: 0.6;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros #fundo #nome{font-size: 18px; color: #FFF; line-height: 140%;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros #fundo #cidade{ padding: 2px 0px; padding-left: 14px; background: transparent url(../i/quebrado/local.svg) left center no-repeat; background-size: 12px; font-size: 10px; font-weight: 300; color: #FFF; line-height: 100%; }
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros #fundo #quantidade{font-size: 10px; font-weight: 300; color: #FFF; line-height: 100%;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros #bloco-bairros #fundo #linha{ height: 1px; width: 60%; background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff99, rgba(255, 255, 255, 0)); margin: 5px 0px 5px 0px;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros .owl-nav .owl-prev {width:40px; height:40px; position:absolute; left:-60px; top:40%; margin-top:-15px; color:#ff0000; outline:none; font-size:0.001px; background: url('../i/quebrado/seta-b.png') center center no-repeat; background-size:auto 20px; transform:rotate(-180deg); transition: all .5s;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros .owl-nav .owl-prev span {color:#FFF; font-size:0.001px;}    
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros .owl-nav .owl-next {width:40px; height:40px; position:absolute; right:-60px; top:40%; margin-top:-15px; color:#FFF; outline:none; font-size:0.001px; background: url('../i/quebrado/seta-b.png') center center no-repeat; background-size:auto 20px; transition: all .3s;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros .owl-nav .owl-next span {color:#FFF; font-size:0.001px;} 
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros .owl-dots {display:table; margin:0 auto; position:relative; z-index:51; margin-top:20px;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros .owl-dots .owl-dot {display:block; width:9px; height:9px; margin-left:3px; margin-right:3px; float:left; border-radius:100%; border: 1px solid #000000; background-color:#666;}
+#tudo #conteudo #repete-conteudo #repete-bairros #conteudo-bairros #mostra-bairros .owl-dots .active {display:block; width:9px; height:9px; border-radius:100%; border: 1px solid #000000; background-color:#ffffff;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos {padding: 20px  3%; background: url('../i/quebrado/fundo-loteamentos.jpg') center center no-repeat; background-size: cover;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos {}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #bloco-titulo { }
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #bloco-titulo .titulo { font-size: 32px; font-weight: 500; color:#ffffff; line-height: 100%;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #bloco-titulo .titulo span{ font-size: 32px; font-weight: 300; color:#ffffff; line-height: 100%;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #bloco-titulo .subtitulo { font-size: 16px; color:#ffffff; font-weight: 400; line-height: 100%; margin-top: 10px; margin-bottom: 40px; }
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos { margin-top:40px;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos #bloco-loteamentos { border-radius: 15px; overflow: hidden;  transition: all .3s;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos #bloco-loteamentos #mostra-imagem {overflow: hidden;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos #bloco-loteamentos #mostra-imagem #imagem{height: 200px; position: relative;  transition: .3s linear;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos #bloco-loteamentos:hover #mostra-imagem #imagem{transform: scale(1.08); transition: .3s linear; }
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos #bloco-loteamentos #info{padding: 10px; background-color: white;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos #bloco-loteamentos #info #nome{font-size: 18px; text-align: center;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos #bloco-loteamentos #info #cidade{padding: 2px 0px; padding-left: 14px; background: transparent url('../i/quebrado/local.svg') left center no-repeat; background-size: 12px; font-size: 10px; font-weight: 300; line-height: 100%;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos #bloco-loteamentos #info #ver p{display: block; margin: 8px 0px; font-size: 9px; color: #FFF; padding: 4px 20px; background-color: #FE6700; border-radius: 13px; transition: .3s linear;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos #bloco-loteamentos:hover #info #ver p{display: block; margin: 8px 0px; font-size: 9px; color: #FFF; padding: 4px 20px; background-color: #ff954c; border-radius: 13px; transition: .3s linear;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos .owl-nav .owl-prev {width:40px; height:40px; position:absolute; left:-60px; top:40%; margin-top:-15px; color:#ff0000; outline:none; font-size:0.001px; background: url('../i/quebrado/seta-branca.png') center center no-repeat; background-size:auto 20px; transform:rotate(-180deg); transition: all .5s;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos .owl-nav .owl-prev span {color:#FFF; font-size:0.001px;}    
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos .owl-nav .owl-next {width:40px; height:40px; position:absolute; right:-60px; top:40%; margin-top:-15px; color:#FFF; outline:none; font-size:0.001px; background: url('../i/quebrado/seta-branca.png') center center no-repeat; background-size:auto 20px; transition: all .3s;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos .owl-nav .owl-next span {color:#FFF; font-size:0.001px;} 
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos .owl-dots {display:table; margin:0 auto; position:relative; z-index:51; margin-top:20px;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos .owl-dots .owl-dot {display:block; width:9px; height:9px; margin-left:3px; margin-right:3px; float:left; border-radius:100%; border: 1px solid #01395c; background-color:#666;}
+#tudo #conteudo #repete-conteudo #repete-loteamentos #conteudo-loteamentos #mostra-loteamentos .owl-dots .active {display:block; width:9px; height:9px; border-radius:100%; border: 1px solid #01395c; background-color:#ffffff;}
+#tudo #conteudo #repete-conteudo #repete-empresa { padding: 20px 3%; }
+#tudo #conteudo #repete-conteudo #repete-empresa #conteudo-empresa {}
+#tudo #conteudo #repete-conteudo #repete-empresa #conteudo-empresa #bloco-empresa {}
+#tudo #conteudo #repete-conteudo #repete-empresa #conteudo-empresa #bloco-empresa a {}
+#tudo #conteudo #repete-conteudo #repete-empresa #conteudo-empresa #bloco-empresa a #imagem { align-self: center; height: 270px; border-radius: 10px; position: relative;}
+#tudo #conteudo #repete-conteudo #repete-empresa #conteudo-empresa #bloco-empresa a #imagem #borda{ height: 80px; width: 250px; background: #FF6801; position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); border-radius: 0 0 50% 50%; clip-path: inset(40px 0 0 0); z-index: 5;} 
+#tudo #conteudo #repete-conteudo #repete-empresa #conteudo-empresa #bloco-empresa a #bloco-dados { padding: 40px 22px; background: #01395c; margin-top: 10px; border-radius: 20px;}
+#tudo #conteudo #repete-conteudo #repete-empresa #conteudo-empresa #bloco-empresa a #bloco-dados #bloco-titulo {}
+#tudo #conteudo #repete-conteudo #repete-empresa #conteudo-empresa #bloco-empresa a #bloco-dados #bloco-titulo .titulo{ font-size: 14px;color: #ffffff; font-weight: 400; line-height: 110%; padding: 20px 0px; padding-left: 59px; background: url(../i/quebrado/logo-sem.png) left center no-repeat; background-size: 50px;} 
+#tudo #conteudo #repete-conteudo #repete-empresa #conteudo-empresa #bloco-empresa a #bloco-dados #bloco-titulo .titulo span{font-size: 32px; color: #ffffff; font-weight: 500;  line-height: 110%; }
+#tudo #conteudo #repete-conteudo #repete-empresa #conteudo-empresa #bloco-empresa a #bloco-dados .descricao{}
+#tudo #conteudo #repete-conteudo #repete-empresa #conteudo-empresa #bloco-empresa a #bloco-dados .descricao p{ font-size: 14px; font-weight: 300; line-height: 197%; color: #ffffff; display: -webkit-box; -webkit-line-clamp: 8; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; text-align: justify; }
+#tudo #conteudo #repete-conteudo #repete-especiais {padding: 20px 3%; }
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais {}
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #bloco-titulo {  background: url('../i/quebrado/seta-baixo.png') center bottom no-repeat; background-size: 30px; padding-bottom: 45px;}
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #bloco-titulo .titulo { font-size: 32px; font-weight: 500; color: #575757; line-height: 100%; text-align: center;}
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #bloco-titulo .titulo span{ font-size: 32px; font-weight: 500; color:#003b5d; line-height: 100%;}
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #bloco-titulo .subtitulo { font-size: 16px; color:#ffffff; font-weight: 400; line-height: 100%; margin-top: 10px; margin-bottom: 40px; }
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #mostra-especiais { margin-top:50px;}
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #mostra-especiais #mostra-especiais {display: flex; flex-wrap: wrap; gap: 40px 20px; cursor: pointer;}
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #mostra-especiais #mostra-especiais #bloco-especiais{ position: relative; border-radius: 15px;width: 100%; background: #01395C; display: grid; justify-items: center; transition: all .3s; align-content: start; padding: 25px;}  #tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #mostra-especiais #mostra-especiais #bloco-especiais #imagem{ position: absolute; top: -30px; width: 40px; height: 40px; padding: 20px; border-radius: 50%;  display: flex;}
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #mostra-especiais #mostra-especiais #bloco-especiais:hover{ position: relative; border-radius: 15px; width: 100%; background: #125b88; display: grid; justify-items: center; transition: all .3s; align-content: start; padding: 25px;}  #tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #mostra-especiais #mostra-especiais #bloco-especiais #imagem{ position: absolute; top: -30px; width: 40px; height: 40px; padding: 20px; border-radius: 50%;  display: flex;}
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #mostra-especiais #mostra-especiais #bloco-especiais #descricao{ color: white; margin-top: 30px;text-align: center;}
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #mostra-especiais #mostra-especiais #bloco-especiais #descricao p{ font-weight: 300; color: white; font-size: 16px; line-height: 150%; }
+#tudo #conteudo #repete-conteudo #repete-especiais #conteudo-especiais #mostra-especiais #mostra-especiais #bloco-especiais #descricao p strong{ font-weight: 600; color: white; font-size: 16px; }
+#conteudo-interno #conteudo-depoimentos {padding: 20px 3%;   }
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos {}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento {padding:15px; margin-bottom:30px; box-shadow:0px 0px 10px -3px #072047; border-radius:15px;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .bloco-imagem {width:100px; height:100px; margin-right:20px; margin-top:10px; float:left; overflow:hidden; position:relative; border:5px solid #FF6801 ; border-radius:100%;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .bloco-imagem .imagem-blur {width:120px; height:120px; position:absolute; z-index:1; overflow:hidden; filter:blur(8px); -webkit-filter: blur(8px);}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .bloco-imagem .imagem-depoimentos {width:100px; height:100px; position:relative; z-index:2; overflow:hidden;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .titulo-depoimento {font-size:22px; color:#666; font-weight:600; margin-top:0px;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .titulo-depoimento font {font-size:22px; color:#666; font-weight:600;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .texto-depoimento {line-height:150%; padding-top:10px;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .texto-depoimento p {font-size:15px; text-align:justify; color:#666;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .texto-depoimento p font {font-size:15px; color:#666;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .texto-depoimento span {font-size:15px; text-align:justify; color:#666;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .texto-depoimento span font {font-size:15px; color:#666;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .texto-depoimento div {font-size:15px; text-align:justify; color:#666;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .texto-depoimento div font {font-size:15px; color:#666;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .texto-depoimento strong {font-size:17px; text-align:justify; color:#666;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .texto-depoimento strong font {font-size:17px; color:#666;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .cidade-depoimento {font-size:15px; color:#666; font-weight:400;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .cidade-depoimento font {font-size:15px; color:#666; font-weight:400;}
+#conteudo-interno #conteudo-depoimentos #mostra-depoimentos #bloco-depoimento .estrelas-depoimento {margin-top:5px;}
+#tudo #conteudo #repete-conteudo #repete-instagram { padding: 20px 3%; }
+#tudo #conteudo #repete-conteudo #repete-instagram #conteudo-instagram {}
+#tudo #conteudo #repete-conteudo #repete-instagram #conteudo-instagram #bloco-titulo { margin-top: 0px;}
+#tudo #conteudo #repete-conteudo #repete-instagram #conteudo-instagram #bloco-titulo .titulo {font-size: 26px;display: flex; justify-content: center;  color: #003b5d;  font-weight: 600; }
+#tudo #conteudo #repete-conteudo #repete-instagram #conteudo-instagram #bloco-titulo .titulo span {font-size: 26px;display: flex;  color: #444444;  font-weight: 600; margin-left: 10px; }
+#tudo #conteudo #repete-conteudo #repete-instagram #conteudo-instagram #bloco-titulo #instagram{ display: block; text-align: center; font-size: 18px; margin-top: 5px;}
+#tudo #conteudo #repete-conteudo #repete-instagram #conteudo-instagram #bloco-titulo .insta{ position: relative; top: -40px;}
+
+#tudo #rodape {}
+#tudo #rodape #repete-rodape {  background-color: #01395c;}
+#tudo #rodape #repete-rodape #conteudo-rodape {padding:  20px 3%;}
+#tudo #rodape #repete-rodape #conteudo-rodape #mapa-site {display: flex; gap: 50px;}
+#tudo #rodape #repete-rodape #conteudo-rodape #mapa-site .p {margin-bottom:3px; font-size:14px; color:#FFF; list-style:disc;}
+#tudo #rodape #repete-rodape #conteudo-rodape #mapa-site .p a {font-size:13px; color:#FFF; font-weight:400; }
+#tudo #rodape #repete-rodape #conteudo-rodape #mapa-site .p a:hover {text-decoration:underline; color: #FE6700;}
+#tudo #rodape #repete-rodape #conteudo-rodape #mapa-site .ativo {margin-bottom:3px; font-size:14px; font-weight:400; list-style:disc; color:#FFF; text-decoration:underline;}
+#tudo #rodape #repete-rodape #conteudo-rodape #mapa-site .ativo a {font-size:13px; color:#FE6700; font-weight:400;  text-decoration:underline;}
+#tudo #rodape #repete-rodape #conteudo-rodape #logo-rodape { display: flex; justify-content: center; margin: 20px 0px;}
+#tudo #rodape #repete-rodape #conteudo-rodape #logo-rodape .logo a {  display:block;}
+#tudo #rodape #repete-rodape #conteudo-rodape #ld-dir{ text-align: center; display: grid; justify-items: center; }
+#tudo #rodape #repete-rodape #conteudo-rodape #ld-dir #titulo{font-size: 18px; color: white; margin-bottom: 10px;}
+#tudo #rodape #repete-rodape #conteudo-rodape #ld-dir #unidade{display: block; font-size: 11px; color: white; margin-bottom: 10px; padding: 2px 0px; padding-left: 17px; background: transparent url('../i/quebrado/pin.png') left center no-repeat;background-size: 15px;}
+#tudo #rodape #repete-rodape #conteudo-rodape #ld-dir #creci{display: flex; justify-content: end;}
+#tudo #rodape #repete-rodape #conteudo-rodape #ld-dir #creci p{ background: #FD6802; padding: 5px 30px 5px 30px; border-radius: 0px 0px 50px 50px; color: white;}
+#tudo #rodape #repete-copy { padding: 5px 3%;}
+#tudo #rodape #repete-copy #conteudo-copy {text-align: center;}
+#tudo #rodape #repete-copy #conteudo-copy .copy {color:#444444; font-size:13px; }
+#tudo #rodape #repete-copy #conteudo-copy .copy font {color:#444444; font-size:13px;}
+#tudo #rodape #repete-copy #conteudo-copy .softbest {}
+
+#conteudo-interno {width:100%; padding-top:86px; min-height: calc(100vh );}
+#conteudo-interno #bloco-titulo  { position: relative; margin: 25px auto; justify-content: center; display: grid; text-align: center;  }
+#conteudo-interno #bloco-titulo .titulo {text-align: center; color: #003b5d; font-size:32px;border-bottom: 2px solid orange; line-height: 100%; padding: 0px 20px; }
+
+#botao-topo {position: absolute; right: 3%; top: 50%; transform: translateY(-50%); color: white; padding: 2px 5px 2px 25px; border-radius: 5px; background-color: #FD6802;  transition: all .3s;}
+#botao-topo:hover {background: #ff954c; transition: all .3s;}
+#botao-topo::before { content: ""; position: absolute; left: 8px; top: 50%; transform: translateY(-50%) rotate(180deg); width: 12px; height: 12px; background: url('../i/quebrado/seta-branca.png') center center no-repeat; background-size: 25px;}
+#botao-baixo { color: white;   padding: 3px 25px 3px 25px; border-radius: 5px;  background-color: #FD6802;  transition: all .3s;}
+#botao-baixo:hover {background: #ff954c; transition: all .3s;}
+#botao-baixo::before { content: ""; position: absolute; left: 8px; top: 50%; transform: translateY(-50%) rotate(180deg); width: 12px; height: 12px; background: url('../i/quebrado/seta-branca.png') center center no-repeat; background-size: 25px;}
+
+#conteudo-interno #conteudo-empresa { padding: 0px 3%;}
+#conteudo-interno #conteudo-empresa .imagem-empresa {  margin-bottom:10px; overflow:hidden; border-radius:15px;}
+#conteudo-interno #conteudo-empresa .descricao {line-height:180%; min-height: 290px;}
+#conteudo-interno #conteudo-empresa .descricao p {font-size:16px; color:#585858; text-align: justify;}
+#conteudo-interno #conteudo-empresa .descricao span {font-size:16px; color:#585858;}
+#conteudo-interno #conteudo-empresa .descricao div {font-size:16px; color:#585858;}
+#conteudo-interno #conteudo-empresa .descricao strong {font-size:16px; color:#121212;}
+#conteudo-interno #conteudo-empresa .descricao li {font-size:16px; color:#585858; list-style:disc; margin-left:15px;}
+#conteudo-interno #conteudo-empresa .descricao img {border-radius:16px;}
+#conteudo-interno #conteudo-empresa .descricao h1 {font-size:20px; color:#121212;}
+#conteudo-interno #conteudo-empresa .descricao h2 {font-size:16px; color:#121212; padding-bottom:10px;}
+#conteudo-interno #conteudo-empresa .descricao h3 {font-size:16px; color:#121212;}
+#conteudo-interno #conteudo-empresa #bloco-itens {margin-top:40px; border-radius:15px;}
+#conteudo-interno #conteudo-empresa #bloco-itens #item {width:262px; float:left; margin-right:50px;}
+#conteudo-interno #conteudo-empresa #bloco-itens #item .icone {display:table; margin:0 auto;}
+#conteudo-interno #conteudo-empresa #bloco-itens #item .nome {font-size:17px; padding-top:15px; text-align:center; font-weight:300; text-transform:uppercase; padding-bottom:2px; color:#585858;}
+#conteudo-interno #conteudo-empresa #bloco-itens #item .nome b {font-size:17px; padding-top:5px; font-weight:600; padding-bottom:2px; color:#191919;}
+#conteudo-interno #conteudo-empresa #bloco-itens #item .descricao {font-size:12px; text-align:justify; padding-top:5px; color:#191919;}
+#conteudo-interno #conteudo-empresa #mais-imagens { }
+#conteudo-interno #conteudo-empresa #mais-imagens .imagem {width:100%; margin-bottom: 20px; }
+#conteudo-interno #conteudo-imoveis {padding: 0px 3%;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis { margin-top: 60px; display: flex; flex-wrap: wrap; justify-content: center; gap: 47px;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel{ width:100%; position:relative; background-color:#FFF; border: 1px solid #e5e5e5; border-radius: 20px; overflow: hidden; transition: transform .35s ease, box-shadow .35s ease;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel:hover{  box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, .15);}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel {width:100%; height:225px; overflow:hidden; display: flex;  }
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #dMar {}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #dMar #dMar-destaque { background: #ff6801; transform: rotate(336deg); display: inline-block; position: relative; top: 10px; left: -45px; padding: 3px  50px; width: 75px; font-size: 10px; color: white;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #topo-img { height: fit-content; margin: 15px; gap: 5px; width: 100%; display: flex; justify-content: end;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #topo-img div { padding: 11px; border-radius: 6px; transition: all .3s linear;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #topo-img .favoritos:hover { background: #ff6801  url('../i/quebrado/fav.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #topo-img .favoritos.ativo { background: #ff6801  url('../i/quebrado/fav.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel .imagem-imovel #topo-img #detalhes:hover { background: #ff6801  url('../i/quebrado/olho.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #bloco-nome { margin: 10px 0px;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #bloco-nome .nome { font-size: 20px; font-weight: 500; line-height: 100%; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel .cidade { font-size:13px; padding-left:17px; color:#444; background:transparent url('../i/quebrado/local.svg') left center no-repeat; background-size:15px;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones {}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones {display: flex; gap: 15px; margin-top: 15px ;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones .tipo {font-size: 12px; font-weight: 500; color: #444; border-right: 1px solid #666; padding-right: 10px; background: transparent url('../i/quebrado/casa.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;} 
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones .quartos {font-size: 12px; font-weight: 500;font-weight: 500; color: #444; background: transparent url('../i/quebrado/quarto.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones .banheiros {font-size: 12px; font-weight: 500; color: #444;  background: transparent url('../i/quebrado/banheiro.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones .garagem {font-size: 12px; font-weight: 500; color: #444; background: transparent url('../i/quebrado/garagem.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #icones #alinha-icones .area {font-size: 12px; color: #444; background: transparent url('../i/quebrado/tamanho.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #preco{ padding: 15px; display: flex; justify-content: space-between;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #preco .preco{ font-size: 22px; font-weight: 500;}
+#conteudo-interno #conteudo-imoveis #mostra-imoveis #bloco-imovel #preco .cod{ font-size: 14px; font-weight: 500; color:#666; align-items: center; display: flex;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno { padding: 0px 3%; margin-bottom:15px; display: flex; justify-content: center;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel {width: 100%;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #bloco-imagem {width: 100%;; position:relative;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #bloco-imagem .owl-prev {width:50px; height:50px; position:absolute; left:-80px; top:50%; margin-top:-25px; color:#FFF; outline:none; font-size:0.001px; background:transparent url('../i/quebrado/seta.svg') center center no-repeat; background-size:auto 50px; border-radius:0; transition: all .3s;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #bloco-imagem .owl-prev span {color:#FFF; font-size:0.001px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #bloco-imagem .owl-next {width:50px; height:50px; position:absolute; transform: rotate(180deg); right:-80px; top:50%; margin-top:-25px; color:#FFF; outline:none; font-size:0.001px; background:transparent url('../i/quebrado/seta.svg') center center no-repeat; background-size:auto 50px; border-radius:0; transition: all .3s;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #bloco-imagem .owl-next span {color:#FFF; font-size:0.001px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel .btn-download {display: inline-block; padding: 7px 10px;  background: rgba(0, 0, 0, 0.6); color: #fff;  font-size: 12px;  text-decoration: none; border-radius: 20px 0px 0px 0px;  position: absolute; bottom: 0px;  right: 0px; }
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza  {}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes {}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #bloco-nome {width:100%; margin-bottom:15px; margin-top:30px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #bloco-nome #limita-nome {width:100%; overflow:hidden;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #bloco-nome #limita-nome .nome-imovel {font-weight:600; line-height: 100%; text-align:center; font-size:22px; color:#00355D;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones { width: 100%; position: relative; text-align: center; background: #00355D; margin-bottom: 30px; padding: 15px 0px 5px 0px; border-radius: 10px 20px 20px 20px;} 
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones span {font-weight:600; color: #FFFFFF;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones .quartos {display: inline-block; width: 85px; line-height: 100%; margin-left: 5px; margin-right: 5px; padding-top: 30px; margin-bottom: 10px; text-align: center; font-size: 14px; font-weight: 500; color: #FFFFFF; background:transparent url('../i/quebrado/icones/quarto.svg') center top no-repeat; background-size:auto 30px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones .suite {display: inline-block;width: 85px; line-height: 100%; margin-left: 5px; margin-right: 5px; padding-top: 30px; margin-bottom: 10px; text-align: center; font-size: 14px; font-weight: 500; color: #FFFFFF; background:transparent url('../i/quebrado/icones/suite.svg') center top no-repeat; background-size:auto 30px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones .banheiros {display: inline-block;width: 85px; line-height: 100%; margin-left: 5px; margin-right: 5px; padding-top: 30px; margin-bottom: 10px; text-align: center; font-size: 14px; font-weight: 500; color: #FFFFFF; background: transparent url('../i/quebrado/icones/banheiro.svg') center top no-repeat; background-size: auto 25px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones .garagem {display: inline-block;width: 85px; line-height: 100%; margin-left: 5px; margin-right: 5px; padding-top: 30px; margin-bottom: 10px; text-align: center; font-size: 14px; font-weight: 500; color: #FFFFFF; background:transparent url('../i/quebrado/icones/garagem.svg') center top no-repeat; background-size:auto 30px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones .area-c {display: inline-block;width: 85px; line-height: 100%; margin-left: 5px; margin-right: 5px; padding-top: 30px; margin-bottom: 10px; text-align: center; font-size: 14px; font-weight: 500; color: #FFFFFF; background:transparent url('../i/quebrado/icones/tamanho.svg') center top no-repeat; background-size:auto 30px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones .area {display: inline-block;width: 85px; line-height: 100%; margin-left: 5px; margin-right: 5px; padding-top: 30px; margin-bottom: 10px; text-align: center; font-size: 14px; font-weight: 500; color: #FFFFFF; background:transparent url('../i/quebrado/icones/total.svg') center top no-repeat; background-size:auto 30px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones .fundos {display: inline-block;width: 85px; line-height: 100%; margin-left: 5px; margin-right: 5px; padding-top: 30px; margin-bottom: 10px; text-align: center; font-size: 14px; font-weight: 500; color: #FFFFFF; background:transparent url('../i/quebrado/icones/fundo.svg') center top no-repeat; background-size:auto 30px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones .largura {display: inline-block;width: 85px; line-height: 100%;  margin-left: 5px; margin-right: 5px; padding-top: 30px; margin-bottom: 10px; text-align: center; font-size: 14px; font-weight: 500; color: #FFFFFF; background:transparent url('../i/quebrado/icones/largura.svg') center top no-repeat; background-size:auto 30px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones .frente {display: inline-block;width: 85px; line-height: 100%;  margin-left: 5px; margin-right: 5px; padding-top: 30px; margin-bottom: 10px; text-align: center; font-size: 14px; font-weight: 500; color: #FFFFFF; background:transparent url('../i/quebrado/icones/frente.svg') center top no-repeat; background-size:auto 30px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #icones .posicao {display: inline-block;width: 85px; line-height: 100%;  margin-left: 5px; margin-right: 5px; padding-top: 30px; margin-bottom: 10px; text-align: center; font-size: 14px; font-weight: 500; color: #FFFFFF; background:transparent url('../i/quebrado/icones/posicao.svg') center top no-repeat; background-size:auto 30px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis {width:100%; float:left;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #bloco-dados {width:100%;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #bloco-dados #alinha #alinha-denovo .outros-imovel {width:100%; text-align: center;  float:left; border-bottom:1px solid #ccc; font-size:16px; padding-bottom:3px; margin-bottom:20px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #bloco-dados #alinha #alinha-denovo .outros-imovel .bold {font-size:16px; color:#ff6801; font-weight:600;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #bloco-dados .preco-imovel {margin-top:20px; text-align:center; font-weight:600; font-size:26px; color:#ffffff; padding:5px 0px; background:#00355D;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #caracteristicas { margin-top: 20px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #caracteristicas .titulo { text-align: center}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #caracteristicas .titulo strong { font-size: 16px ; color: #00355D;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario {width: 100%;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario #area-erro {padding:5px 10px; text-align:center; color:#FFF; background-color:#000000; border-radius:10px; margin-top:15px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario #area-erro .erro {color:#FFF;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario #area-erro .erro strong {color:#FFF;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario .titulo-orcamento {font-size:20px; text-align:center; padding-top:25px; padding-bottom:5px; font-weight:600; color:#00355D;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario .texto-orcamento {font-size:14px; text-align:center; padding-bottom:15px; color:#313237;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario .formulario {width:100%;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario .formulario .campo {width:48%; float:left; margin-bottom:15px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario .formulario .campos-descricao {width:96%; float:left; margin-bottom:15px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario .formulario .input {width:94%; padding:6px 3%; color:#666; border:1px solid #ccc; border-radius:5px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario .formulario select {width:100%; padding:6px 2%; color:#666; border:1px solid #ccc; border-radius:5px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario .formulario textarea {width:100%; padding:6px 2%; height:50px; color:#666; border:1px solid #ccc; border-radius:5px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario .formulario .botao-enviar {display:table; margin:0 auto;}  
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #formulario .formulario .botao-enviar .input-botao {width:110px; float:right; border:none; cursor:pointer; padding:4px 0px; border:none; font-size:13px; font-weight:500; color:#ffffff; background-color:#00355D; transition:.2s linear;} 
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #compartilhar { width: 100%; float:left; margin-top:30px; justify-content: center;}  
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #compartilhar .titulo {color:#373435; text-decoration:underline; padding-bottom:5px; font-size:16px;}  
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #mostra-informacoes #col-esq-imoveis #compartilhar #redes {color:#373435; text-decoration:underline; padding-bottom:5px; font-size:16px; display: flex; justify-content: center;}  
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc {width:100%; margin-top:30px; min-height:325px; border:1px solid #ccc; border-radius:5px; float:right;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc .titulo {font-size:18px; margin-top:10px; padding-bottom:5px; text-align:center; font-weight:600; color:#00355D;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc .descricao {margin-top:10px; line-height:185%; text-align:justify; padding: 1px 3%;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc .descricao p {font-size:14px; color:#313237;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc .descricao span {font-size:14px; color:#313237;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc .descricao div {font-size:14px; color:#313237;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc .descricao class {font-size:14px; color:#313237;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc .descricao strong {font-size:16px; color:#313237;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc .titulo-corretor {padding:5px 20px; margin-top:20px; font-size:15px; text-align:center; font-weight:500; color:#ffffff; background-color:#00355D;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc #corretor {padding:10px; background-color:#f5f5f5;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc #corretor #esq-corretor {width:100%; float:left;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc #corretor #esq-corretor .imagem {float:left; margin-right:10px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc #corretor #esq-corretor .nome {font-size:16px; padding-bottom:0px; color:#000000; font-weight:600;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc #corretor #esq-corretor .telefone {font-size:14px; padding-bottom:0px; color:#000000;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc #corretor #esq-corretor .email a {display:block; font-size:12px; color:#000000;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc #corretor #dir-corretor { float: right; width: 100%; display: flex; justify-content: center; margin-top: 7px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc #corretor #dir-corretor .botao-whatsapp-2 {display:table; float:right;  width: 100%;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc #corretor #dir-corretor .botao-whatsapp-2 a {display:block; line-height: 100%; padding:10px; cursor:pointer; padding-top:30px; font-size:12px; text-align:center; color:#FFF; background:#05a308 url('../i/quebrado/whatsapp.svg') center 5px no-repeat; background-size:22px; box-shadow:0px 0px 10px -3px black; border-radius:5px; transition:.2s linear;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #bloco-desc #corretor #dir-corretor .botao-whatsapp-2 a:hover {background:#06bf09 url('../i/quebrado/whatsapp.svg') center 5px no-repeat; background-size:22px; transition:.2s linear;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza .link-video {width: 100%; margin:0 auto; margin-top:40px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza .veja {display:table; font-size:16px; margin:0 auto; margin-bottom:35px; text-align:center; padding:5px 40px; color:#ffffff; background-color:#00355D;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza .veja strong {font-size:16px; color:#ffffff; font-weight:600;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado {margin-top: 25px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel { width:100%; position:relative; margin-bottom: 20px; background-color:#FFF; border: 1px solid #e5e5e5; border-radius: 20px; overflow: hidden; transition: transform .35s ease, box-shadow .35s ease;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel:hover{  box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, .15);}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel .imagem-imovel {width:100%; height:225px; overflow:hidden; display: flex;  }
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel .imagem-imovel #dMar {}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel .imagem-imovel #dMar #dMar-destaque { background: #ff6801; transform: rotate(336deg); display: inline-block; position: relative; top: 10px; left: -45px; padding: 3px  50px; width: 75px; font-size: 10px; color: white;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel .imagem-imovel #topo-img { height: fit-content; margin: 15px; gap: 5px; width: 100%; display: flex; justify-content: end;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel .imagem-imovel #topo-img div { padding: 11px; border-radius: 6px; transition: all .3s linear;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel .imagem-imovel #topo-img .favoritos:hover { background: #ff6801  url('../i/quebrado/fav.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel .imagem-imovel #topo-img .favoritos.ativo { background: #ff6801  url('../i/quebrado/fav.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel .imagem-imovel #topo-img #detalhes:hover { background: #ff6801  url('../i/quebrado/olho.svg') center center no-repeat!important; background-size: 15px!important; transition: all .3s ;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #bloco-nome { margin: 10px 0px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #bloco-nome .nome { font-size: 20px; font-weight: 500; line-height: 100%; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel .cidade { font-size:13px; padding-left:17px; color:#444; background:transparent url('../i/quebrado/local.svg') left center no-repeat; background-size:15px;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #icones {}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #icones #alinha-icones {display: flex; gap: 15px; margin-top: 15px ;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #icones #alinha-icones .tipo {font-size: 12px; font-weight: 500; color: #444; border-right: 1px solid #666; padding-right: 10px; background: transparent url('../i/quebrado/casa.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;} 
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #icones #alinha-icones .quartos {font-size: 12px; font-weight: 500;font-weight: 500; color: #444; background: transparent url('../i/quebrado/quarto.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #icones #alinha-icones .banheiros {font-size: 12px; font-weight: 500; color: #444;  background: transparent url('../i/quebrado/banheiro.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #icones #alinha-icones .garagem {font-size: 12px; font-weight: 500; color: #444; background: transparent url('../i/quebrado/garagem.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #icones #alinha-icones .area {font-size: 12px; color: #444; background: transparent url('../i/quebrado/tamanho.svg') left center no-repeat; background-size: 15px; padding-left: 20px; align-items: center; display: flex;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #preco{ padding: 15px; display: flex; justify-content: space-between;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #preco .preco{ font-size: 22px; font-weight: 500;}
+#conteudo-interno #repete-imoveis-detalhes #conteudo-imoveis-interno #detalhes-imovel #centraliza #recomendado #bloco-imovel #preco .cod{ font-size: 14px; font-weight: 500; color:#666; align-items: center; display: flex;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos { padding: 20px 3%; }
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos { margin: 0 auto; }
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #bloco-titulo {text-align: center; }
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #bloco-titulo .titulo {font-size: 32px; color: #444444; font-weight: 500; line-height: 110%;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #bloco-titulo .titulo span {font-size: 32px; color: #00355D; font-weight: 500; }
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos {}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .carrosel-depoimento a {display:block; min-height: 140px; margin-top: 20px;  background-color: #ffffff; }
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .carrosel-depoimento a #mostra-nome {display: flex; justify-content: center;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .carrosel-depoimento a #mostra-nome .imagem-depoimentos {width: 50px; height: 50px; border-radius: 50%;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .carrosel-depoimento a #mostra-nome #nome {align-self: center; margin-left: 10px;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .carrosel-depoimento a #mostra-nome #nome .nome-depoimentos {font-size: 16px; font-weight: 500;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .carrosel-depoimento a #mostra-depoimento{justify-items: center;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .carrosel-depoimento a #mostra-depoimento .titulo{text-align: center; font-weight: 500; font-size: 16px; margin-top: 10px; margin-bottom: 10px; color: #666;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .carrosel-depoimento a #mostra-depoimento #depoimento {width: 100%; text-align: center; line-height: 100%; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .carrosel-depoimento a #mostra-depoimento #depoimento p {color: #666; font-size: 12px;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .owl-carousel .animated {display: flex; justify-content: center; text-align: center;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .owl-carousel.owl-drag .owl-item {}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .owl-nav .owl-prev {width:40px; height:40px; position:absolute; left:-50px; top:40%; margin-top:-15px; color:#ff0000; outline:none; font-size:0.001px; background: url('../i/quebrado/seta-b.png') center center no-repeat; background-size:auto 25px; transform:rotate(180deg); transition: all .3s;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .owl-nav .owl-prev span {color:#FFF; font-size:0.001px;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .owl-nav .owl-next {width:40px; height:40px; position:absolute; right:-50px; top:40%; margin-top:-15px; color:#FFF; outline:none; font-size:0.001px; background: url('../i/quebrado/seta-b.png') center center no-repeat; background-size:auto 25px; transform:rotate(0deg);  transition: all .3s;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .owl-nav .owl-next span {color:#FFF; font-size:0.001px;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .nome-produto {font-size: 22px; color: #505050; margin-top: 15px;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .owl-dots {display:table; margin:0 auto; position:relative; z-index:51;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .owl-dots .owl-dot {display:block; width:8px; height:8px; margin-left:3px; margin-right:3px; float:left; border-radius:100%; border: 1px solid #666;  background-color:#ffffff00;}
+#tudo #conteudo #repete-conteudo #repete-depoimentos #conteudo-depoimentos #mostra-depoimentos .owl-dots .active {display:block; width:8px; height:8px; border-radius:100%; background-color:#666; border: 1px solid #666;}
+#conteudo-interno #repete-loteamentos {width:100%;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos { margin-bottom: 30px;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  {display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  #bloco-loteamentos { border-radius: 15px; overflow: hidden;  transition: all .3s;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  #bloco-loteamentos:hover {  box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, .15);}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  #bloco-loteamentos #mostra-imagem {overflow: hidden;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  #bloco-loteamentos #mostra-imagem #imagem{ height: 200px; width: 313px; position: relative;  transition: .3s linear;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  #bloco-loteamentos:hover #mostra-imagem #imagem{transform: scale(1.08); transition: .3s linear; }
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  #bloco-loteamentos #info{padding: 10px; background-color: #eeeeee;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  #bloco-loteamentos #info #nome{font-size: 18px; text-align: center; line-height: 100%; }
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  #bloco-loteamentos #info #cidade{padding: 2px 0px; padding-left: 14px; background: transparent url('../i/quebrado/local.svg') left center no-repeat; background-size: 12px; font-size: 10px; font-weight: 300; line-height: 100%;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  #bloco-loteamentos #info #ver p{display: block;  margin: 8px 0px; font-size: 9px; color: #FFF; padding: 4px 20px; background-color: #FE6700; border-radius: 13px; transition: .3s linear;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  #bloco-loteamentos:hover #info #ver p{display: block; margin: 8px 0px; font-size: 9px; color: #FFF; padding: 4px 20px; background-color: #ff954c; border-radius: 13px; transition: .3s linear;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  .owl-nav .owl-prev {width:40px; height:40px; position:absolute; left:-60px; top:40%; margin-top:-15px; color:#ff0000; outline:none; font-size:0.001px; background: url('../i/quebrado/seta-branca.png') center center no-repeat; background-size:auto 20px; transform:rotate(-180deg); transition: all .5s;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  .owl-nav .owl-prev span {color:#FFF; font-size:0.001px;}    
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  .owl-nav .owl-next {width:40px; height:40px; position:absolute; right:-60px; top:40%; margin-top:-15px; color:#FFF; outline:none; font-size:0.001px; background: url('../i/quebrado/seta-branca.png') center center no-repeat; background-size:auto 20px; transition: all .3s;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  .owl-nav .owl-next span {color:#FFF; font-size:0.001px;} 
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  .owl-dots {display:table; margin:0 auto; position:relative; z-index:51; margin-top:20px;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  .owl-dots .owl-dot {display:block; width:9px; height:9px; margin-left:3px; margin-right:3px; float:left; border-radius:100%; border: 1px solid #FE6700; background-color:#666;}
+#conteudo-interno #repete-loteamentos #conteudo-loteamentos #bloco-imagem  .owl-dots .active {display:block; width:9px; height:9px; border-radius:100%; border: 1px solid #FE6700; background-color:#ffffff;}
+#conteudo-interno #repete-loteamentos-detalhes {}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos { margin-bottom: 20px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #bloco-imagem {padding: 20px 3%;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #bloco-imagem .owl-prev {width:40px; height:40px; position:absolute; left:-60px; top:53%; margin-top:-25px; color:#FFF; outline:none; font-size:0.001px; background: #00355Dbf  url('../i/quebrado/seta.png') center center no-repeat;  transform: rotate(180deg);   background-size:auto 20px; padding: 20px!important; border-radius:50%; transition: all .3s;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #bloco-imagem .owl-prev span {color:#FFF; font-size:0.001px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #bloco-imagem .owl-next {width:40px; height:40px; position:absolute; right:-60px; top:53%; margin-top:-25px; color:#FFF; outline:none; font-size:0.001px; background: #00355Dbf  url('../i/quebrado/seta.png') center center no-repeat;  background-size:auto 20px;  padding: 20px!important; border-radius:50%;  transition: all .3s;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #bloco-imagem .owl-next span {color:#FFF; font-size:0.001px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes {padding: 10px 3%;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-esq-loteamentos {width:100%; float:left;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-esq-loteamentos #bloco-dados {width:100%;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-esq-loteamentos #bloco-dados .loteamento {color:#3a3a3a; font-size:22px; font-weight:400; line-height:25px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-esq-loteamentos #bloco-dados .titulo {color:#00355D; font-size:30px; font-weight:700; line-height: 100%;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-esq-loteamentos #bloco-dados .descricao {margin-top:20px; line-height:180%; max-height:325px; }
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-esq-loteamentos #bloco-dados .descricao p { font-size: 14px; text-align: justify; line-height: 120%; margin-top: 20px; margin-bottom: 15px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-esq-loteamentos #bloco-dados .descricao strong {font-size:16px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-esq-loteamentos #bloco-dados .descricao div {font-size:16px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-esq-loteamentos #bloco-dados .descricao span {font-size:16px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-esq-loteamentos #bloco-dados .descricao li {font-size:16px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-dir-loteamentos {width:100%; }
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-dir-loteamentos .endereco {font-size:22px; color:#00355D; font-weight:600; text-align:center;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-dir-loteamentos #imagens-localizacao {margin-top:20px; position:relative;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-dir-loteamentos #imagens-localizacao .icone-localizacao {position:absolute; bottom:20px; left:20px; z-index:50;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-dir-loteamentos #imagens-localizacao .owl-prev {width:30px; height:30px; position:absolute; left:20px; top:53%; margin-top:-25px; color:#FFF; outline:none; font-size:0.001px; opacity:0.4; background: #00355D url('../i/quebrado/seta.png') center center no-repeat; background-size:auto 30px; border-radius:0; transition: all .3s;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-dir-loteamentos #imagens-localizacao .owl-prev:hover {opacity:0.8; transition: all .3s;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-dir-loteamentos #imagens-localizacao .owl-prev span {color:#FFF; font-size:0.001px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-dir-loteamentos #imagens-localizacao .owl-next {width:30px; height:30px; position:absolute;  transform: rotate(180deg);  right:20px; top:53%; margin-top:-25px; color:#FFF; outline:none; opacity:0.4; font-size:0.001px; background:#00355D url('../i/quebrado/seta.png') center center no-repeat; background-size:auto 30px; border-radius:0; transition: all .3s;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-dir-loteamentos #imagens-localizacao .owl-next:hover {opacity:0.8; transition: all .3s;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #mostra-informacoes #col-dir-loteamentos #imagens-localizacao .owl-next span {color:#FFF; font-size:0.001px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-caracteristicas {padding: 10px 3%; background-color:#f5f5f5;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-caracteristicas #caracteristicas {}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-caracteristicas #caracteristicas .titulo {font-weight:700; font-size:30px; color:#00355D;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-caracteristicas #caracteristicas #conteudo-caracteristica { display: flex; flex-wrap: wrap; align-items: flex-start; margin-top: 30px; gap: 10px 70px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-caracteristicas #caracteristicas #conteudo-caracteristica .item-caracteristica {display: flex; align-items: center; gap: 15px; flex: 1 1 245px; max-width: 247px; line-height: 160%; }
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-caracteristicas #caracteristicas #conteudo-caracteristica .item-caracteristica .icone {padding: 10px; background-color: #00355D; border-radius: 10px; flex-shrink: 0;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-caracteristicas #caracteristicas #conteudo-caracteristica .item-caracteristica .texto { font-size: 20px; color: #00355D; word-break: break-word; }
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-localizacao {width:100%;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-localizacao #conteudo-localizacao {margin-top: 20px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-localizacao #conteudo-localizacao .titulo {font-size:30px; font-weight:900; color:#00355D; text-align:center;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-localizacao #conteudo-localizacao .endereco { font-size:22px; color:#00355D; font-weight:600; text-align:center; line-height: 100%;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #repete-localizacao #conteudo-localizacao #col-esq-localizacao {width:100%; display: flex;  margin-top:20px; box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; border-radius: 10px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #video-360 { padding:10px 3%; padding-bottom:20px; background-color:#f5f5f5;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #video-360 #mostra-alinha {  justify-content: center; gap:0px 30px;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #video-360 #mostra-alinha .link-video {width:100%;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #video-360 #mostra-alinha .iframe-360 {width:100%;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #conteudo-preco {text-align: center; padding: 10px 3%; margin: 20px 3%; background-color: #f5f5f5; border-radius: 15px;} 
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #conteudo-preco .a-partir{font-size: 18px; color: #3a3a3a;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #conteudo-preco .preco {font-size: 30px; text-align: center; align-items: center; text-transform: uppercase; color: #3a3a3a; font-weight: 600;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #conteudo-preco .preco .centavos {font-size: 32px; color: #3a3a3a; font-weight: 600; vertical-align: top;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #conteudo-preco .parcela {font-size: 18px; text-align: center; align-items: center; color: #3a3a3a;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #conteudo-preco .detalhes {width: 100px; height: 35px; display: flex; align-items: center; justify-content: center;  font-size: 18px;  margin-top: 10px; border-radius: 0px; color: #ffffff; padding: 5px 10px; background-color: #00407d; transition: all .3s;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #whatz {width: 100%; display: flex; margin-top:20px;  justify-content: center;}
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #whatz #fundo{ width: 300px; height: 75px; background-color: #009c17 ; border-radius: 15px; display: flex; align-items: center;  transition: all .3s; cursor: pointer;} 
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #whatz #fundo:hover{ width: 300px; height: 75px; background-color: #02cf21 ; border-radius: 15px; display: flex; align-items: center; transition: all .3s;} 
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #whatz #fundo #dir{ width: 30%; display: flex; justify-content: center; border-radius: 10px 0px 0px 10px; align-items: center; height: 75px; box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3); } 
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #whatz #fundo #esq{ margin-left: 20px;} 
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #whatz #fundo #esq .whatz{color: #ffffff; font-size: 22px; font-weight: bold; line-height: 100%;} 
+#conteudo-interno #repete-loteamentos-detalhes #conteudo-loteamentos #whatz #fundo #esq .descricao{color: #ffffff; font-size: 16px; line-height: 100%; } 
+#conteudo-interno #conteudo-noticias {padding: 20px 3%; display: flex; flex-wrap: wrap; gap: 30px; }
+#conteudo-interno #conteudo-noticias #bloco-noticia {width:100%;}
+#conteudo-interno #conteudo-noticias #bloco-noticia .imagem-noticia {}
+#conteudo-interno #conteudo-noticias #bloco-noticia .nome-noticia { overflow:hidden; padding-top:10px; padding-bottom:10px;  }
+#conteudo-interno #conteudo-noticias #bloco-noticia .nome-noticia a {height:44px; display:table-cell; vertical-align:middle; font-size:18px; font-weight:bold; line-height: 121%; color:#00355D; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;}
+#conteudo-interno #conteudo-noticias #bloco-noticia .resumo-noticia {min-height: 82px; padding-top: 10px; color: #444; text-align: justify; font-size: 15px; border-top: 1px solid #00355D; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;} 
+#conteudo-interno #conteudo-noticias #bloco-noticia .resumo-noticia p{ color:#444; text-align:justify; font-size:11px;  display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;}
+#conteudo-interno #conteudo-noticias #bloco-noticia .resumo-noticia span{ color:#444; text-align:justify; font-size:11px;  display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;}
+#conteudo-interno #conteudo-noticias #bloco-noticia .leia-mais {display:table;margin-top:5px;}
+#conteudo-interno #conteudo-noticias #bloco-noticia .leia-mais a {display: block; font-size: 12px; color: #FFF; font-weight: 500; padding: 10px 30px 10px 30px; background-color: #ff6801; border-radius: 10px; transition: .3s linear;}
+#conteudo-interno #conteudo-noticias #bloco-noticia:hover .leia-mais a {background-color:#ff954c; transition:.2s linear;}
+#conteudo-interno #conteudo-noticias-detalhes {padding: 20px 3%; display: grid; justify-content: center; margin-top:25px;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes {}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes .imagem-noticias {  margin-bottom:20px; overflow:hidden; border-radius:10px;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes .nome-noticias {font-size:28px; margin-bottom:15px; line-height: 100%; font-weight:600; color:#00355D; }
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes .fonte-noticias {color:#585858; text-decoration:none; font-size:16px; padding-top:15px; text-align:left; text-decoration:underline;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias {line-height:170%; text-align: justify;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias p {font-size:14px; color:#666; margin: 1em 0;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias br {display:block; margin-bottom: 1em;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias ul {margin: 1em 0; padding-left: 1.5em;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias ol {margin: 1em 0; padding-left: 1.5em;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias span {font-size:14px; color:#666;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias div {font-size:14px; color:#666;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias strong {font-size:16px; color:#666;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias li {font-size:14px; color:#666; margin-left:15px; list-style:disc;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias h1 {font-size:25px; color:#666; margin: 1em 0;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias h2 {font-size:23px; color:#666; margin: 1em 0;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias h3 {font-size:21px; color:#666; margin: 1em 0;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias h4 {font-size:19px; color:#666; margin: 1em 0;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias h5 {font-size:17px; color:#666; margin: 1em 0;}
+#conteudo-interno #conteudo-noticias-detalhes #mostra-detalhes #dados-detalhes .descricao-noticias h6 {font-size:16px; color:#666; margin: 1em 0;}
+#conteudo-interno #conteudo-noticias-detalhes #outras { }
+#conteudo-interno #conteudo-noticias-detalhes #outras .imagem-outras { border-radius:10px;}
+#conteudo-interno #conteudo-noticias-detalhes #outras .imagem-outras a { width: 100%; height:220px; overflow:hidden; border-radius: 10px; margin-bottom: 10px;}
+#conteudo-interno #conteudo-noticias-detalhes #curtir {display:table; margin:0 auto; }
+#conteudo-interno #conteudo-como-chegar { padding: 0px 3%;}
+#conteudo-interno #conteudo-como-chegar #mapa { width: 100%; margin-top: 20px; border-radius: 20px; position: relative;}
+#conteudo-interno #conteudo-como-chegar #mapa #mostra-mapa{ width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0px 0px 10px -2px #000;}
+#conteudo-interno #conteudo-como-chegar #mapa #borda{height: 80px; width: 250px; background: #FF6801; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); border-radius: 50% 50% 0 0; clip-path: inset(0 0 40px 0); z-index: 5;} 
+#conteudo-interno #conteudo-como-chegar #unidades { background: #00355D; border-radius: 20px; padding: 30px  15px; position: relative; z-index: 0;}
+#conteudo-interno #conteudo-como-chegar #unidades #titulo {color: white; font-size: 24px; line-height: 148%;}
+#conteudo-interno #conteudo-como-chegar #unidades #selecione {color: white; font-size: 10px; margin-bottom: 20px; }
+#conteudo-interno #conteudo-como-chegar #unidades .unidade{display: block; font-size: 14px; color: white; margin-bottom: 29px; padding: 6px 0px; padding-left: 32px; padding-right: 10px; background: transparent url(../i/quebrado/pin.png) 4px center no-repeat; background-size: 25px;line-height: 100%; border-radius: 20px; transition: .2s linear;}
+#conteudo-interno #conteudo-como-chegar #unidades .unidade:hover, #conteudo-interno #conteudo-como-chegar #unidades .unidade.active{ display: block; font-size: 14px; color: white; margin-bottom: 29px; padding: 6px 0px; padding-left: 32px; padding-right: 10px; background: #ff954c url(../i/quebrado/pin.png) 4px center no-repeat; background-size: 25px; line-height: 100%; border-radius: 20px; transition: .2s linear; } 
+#conteudo-interno #conteudo-como-chegar #map-loading{ position:absolute; inset:0; background:rgba(255,255,255,.8);display:flex;  align-items:center;justify-content:center;  opacity:0; ointer-events:none; transition: opacity .3s ease; z-index:5;}
+#conteudo-interno #conteudo-como-chegar #map-loading::after{ content:""; width:35px; height:35px; border:4px solid #ccc; border-top:4px solid #ff6801; border-radius:50%; animation:spin .8s linear infinite;}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+#conteudo-interno  #sub {width:100%; margin: 0 auto; border-radius: 20px; text-align: center; position: relative; z-index: 10; color: #00355D;}
+#conteudo-interno #conteudo-trabalhe { max-width: 600px; margin: 0px auto; margin-bottom: 40px; background: #ffffff; padding: 40px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+#conteudo-interno #conteudo-trabalhe #form-trabalhe .campo{ margin-bottom: 25px; position: relative; display: grid; justify-content: stretch; }
+#conteudo-interno #conteudo-trabalhe #form-trabalhe label{ display: block; font-size: 14px; font-weight: 600; color: #00355D; margin-bottom: 8px; }
+#conteudo-interno #conteudo-trabalhe #form-trabalhe label span{ font-weight: 400; font-size: 12px; color: #777;}
+#conteudo-interno #conteudo-trabalhe #form-trabalhe input, #conteudo-interno #conteudo-trabalhe #form-trabalhe textarea{ width: 100%; border: none; border-bottom: 2px solid #ddd; padding: 10px 5px; font-size: 15px; background: transparent; transition: all 0.3s ease; color: #000; }
+#conteudo-interno #conteudo-trabalhe #form-trabalhe input:focus, #conteudo-interno #conteudo-trabalhe #form-trabalhe textarea:focus{ outline: none; border-bottom: 2px solid #FF6801; } 
+#conteudo-interno #conteudo-trabalhe #form-trabalhe textarea{ resize: none; min-height: 100px; } 
+#conteudo-interno #conteudo-trabalhe #form-trabalhe .contador{ font-size: 12px; color: #777; text-align: right; margin-top: 5px; }
+#conteudo-interno #conteudo-trabalhe #form-trabalhe button{ width: 100%; padding: 14px; border: none; background: #00355D; color: #ffffff; font-size: 16px; font-weight: 600; border-radius: 6px; cursor: pointer; transition: all 0.3s ease; }
+#conteudo-interno #conteudo-trabalhe #form-trabalhe button:hover{ background: #FF6801; } #conteudo-interno #conteudo-trabalhe #form-trabalhe input[type="file"]{ border: 2px dashed #00355D;padding: 15px;  border-radius: 6px; background: #f9f9f9; cursor: pointer; transition: all 0.3s ease; font-size: 11px; width: auto; }
+#conteudo-interno #conteudo-trabalhe #form-trabalhe input[type="file"]:hover{ border-color: #FF6801; background: #fff; }
+
+#conteudo-interno #repete-estadias {padding: 0px 3%;}
+#conteudo-interno #repete-estadias #conteudo-estadias {}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes {width: 100%; }
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes .titulo-rest {text-align: center; margin-top: 60px; margin-bottom: 30px; font-size: 22px;  background: #00355D; color: white;  padding: 10px 0px;  border-radius: 30px 30px 30px 30px;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #bloco-ver-pousadas {width: 100%;  text-align: center;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #bloco-ver-pousadas .ver-pousadas{width: 130px; color: white; background-color: #ff6801; padding: 5px 9px 5px 9px; border-radius: 8px; margin-right: 5px; transition: .3s;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #bloco-ver-pousadas .ver-pousadas:hover{width: 130px; color: white; background-color: #ff954c; padding: 5px 9px 5px 9px; border-radius: 8px; margin-right: 5px; transition: .3s; cursor: pointer;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #restaurantes  { justify-content: center;  }
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #restaurantes #fundo-estadias { margin-bottom: 10px; padding: 15px; border-radius: 30px;  background-color: #00355dd4; }
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #restaurantes #fundo-estadias:hover #bloco-imagem img { border-radius: 20px; transform:scale(1.1);box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; transition: all .3s;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #restaurantes #fundo-estadias #conteudo{ margin-top: 20px;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #restaurantes #fundo-estadias #conteudo .titulo-estadia{font-size: 22px; font-weight: 400; color: white; line-height: 100%; margin-bottom: 12px; text-align: center;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #restaurantes #fundo-estadias #conteudo #botoes{ display: grid; justify-items: center;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #restaurantes #fundo-estadias #conteudo #botoes #mapa{background: #ff6801 url(../i/quebrado/pin.png) 12px center no-repeat; background-size: 19px; padding: 10px 30px 10px 35px; color: white; border-radius: 10px; transition: all .3s; }
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #restaurantes #fundo-estadias #conteudo #botoes #mapa:hover{background: #ff954c url(../i/quebrado/pin.png) 12px center no-repeat; background-size: 19px; padding: 10px 30px 10px 35px; color: white; border-radius: 10px; transition: all .3s;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #restaurantes #fundo-estadias #conteudo #botoes #whats{background: #01b24a url(../i/quebrado/whatsapp.svg) 12px center no-repeat; background-size: 19px; padding: 10px 30px 10px 35px; color: white; border-radius: 10px; transition: all .3s; margin-bottom: 10px; }
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-restaurantes #restaurantes #fundo-estadias #conteudo #botoes #whats:hover{background: #08c758 url(../i/quebrado/whatsapp.svg) 12px center no-repeat; background-size: 19px; padding: 10px 30px 10px 35px; color: white; border-radius: 10px; transition: all .3s;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas {width: 100%; }
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas .titulo-pousadas {text-align: center; margin-top: 60px; margin-bottom: 30px; font-size: 22px;  background: #00355D; color: white;  padding: 10px 0px;  border-radius: 30px 30px 30px 30px;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #bloco-ver-pousadas {width: 100%;  text-align: center;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #bloco-ver-pousadas .ver-pousadas{width: 130px; color: white; background-color: #ff6801; padding: 5px 9px 5px 9px; border-radius: 8px; margin-right: 5px; transition: .3s;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #bloco-ver-pousadas .ver-pousadas:hover{width: 130px; color: white; background-color: #ff954c; padding: 5px 9px 5px 9px; border-radius: 8px; margin-right: 5px; transition: .3s; cursor: pointer;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #pousadas  { justify-content: center;  }
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #pousadas #fundo-estadias { margin-bottom: 10px; padding: 15px; border-radius: 30px;  background-color: #00355dd4; }
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #pousadas #fundo-estadias:hover #bloco-imagem img { border-radius: 20px; transform:scale(1.1);box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; transition: all .3s;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #pousadas #fundo-estadias #conteudo{ margin-top: 20px;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #pousadas #fundo-estadias #conteudo .titulo-estadia{font-size: 22px; font-weight: 400; color: white; line-height: 100%; margin-bottom: 12px; text-align: center;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #pousadas #fundo-estadias #conteudo #botoes{ display: grid; justify-items: center;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #pousadas #fundo-estadias #conteudo #botoes #mapa{background: #ff6801 url(../i/quebrado/pin.png) 12px center no-repeat; background-size: 19px; padding: 10px 30px 10px 35px; color: white; border-radius: 10px; transition: all .3s; }
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #pousadas #fundo-estadias #conteudo #botoes #mapa:hover{background: #ff954c url(../i/quebrado/pin.png) 12px center no-repeat; background-size: 19px; padding: 10px 30px 10px 35px; color: white; border-radius: 10px; transition: all .3s;}
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #pousadas #fundo-estadias #conteudo #botoes #whats{background: #01b24a url(../i/quebrado/whatsapp.svg) 12px center no-repeat; background-size: 19px; padding: 10px 30px 10px 35px; color: white; border-radius: 10px; transition: all .3s; margin-bottom: 10px; }
+#conteudo-interno #repete-estadias #conteudo-estadias #estadias-pousadas #pousadas #fundo-estadias #conteudo #botoes #whats:hover{background: #08c758 url(../i/quebrado/whatsapp.svg) 12px center no-repeat; background-size: 19px; padding: 10px 30px 10px 35px; color: white; border-radius: 10px; transition: all .3s;}
+
+#conteudo-interno #repete-politica {}
+#conteudo-interno #repete-politica #conteudo-politica {padding: 20px 3%;}
+#conteudo-interno #repete-politica #conteudo-politica h2 {font-weight:bold; font-size:20px; color:#ff6801; padding-top:20px; font-weight:600; padding-bottom:20px;}
+#conteudo-interno #repete-politica #conteudo-politica h3 {font-weight:bold; font-size:16px; color:#ff6801; padding-top:20px; font-weight:600; padding-bottom:15px;}
+#conteudo-interno #repete-politica #conteudo-politica p {font-size:14px; color:#313237; line-height:150%; text-align:justify; padding-top:10px; padding-bottom:10px;}
+#conteudo-interno #repete-politica #conteudo-politica a {font-size:14px; color:#313237; text-decoration:underline;}
+#conteudo-interno #repete-politica #conteudo-politica li {font-size:14px; color:#313237; line-height:150%; text-align:justify; margin-left:30px; list-style:disc;}
+#conteudo-interno #repete-politica #conteudo-politica strong {font-size:14px; color:#ff6801; font-weight:600;}
+
+#tudo #rodape {width:100%;}
+#tudo #rodape #politica-privacidade {width:297px; padding:10px 15px; position:fixed; left:50%; line-height:15px; margin-left:-165px; bottom: 36px; z-index:10000; background:#f5f5f5; border:2px solid #00355D; border-radius:15px; transition: all .2s;}
+#tudo #rodape #politica-privacidade .texto {font-size:13px; color:#000000; font-weight:300; text-align:center;}
+#tudo #rodape #politica-privacidade .texto a {font-size:13px; color:#00355D; font-weight:600; text-align:center;}
+#tudo #rodape #politica-privacidade .texto .botao-ok {padding:3px 15px; font-size:12px; font-weight:600; cursor:pointer; position: relative; top: 5px; left: 0px; border-radius:20px; color:#ffffff; background-color:#00355D; transition: all .2s;}
+#tudo #rodape #politica-privacidade .texto .botao-ok:hover {background-color:#00355D; transition: all .2s;}
+
+#botao-whats { position: fixed;  bottom: 47px;  right: 5%; cursor: pointer;  display: flex;  align-items: center;  }
+#botao-whats #whats {  width: 55px;  height: 55px;   position: relative;  display: flex;  justify-content: center;  align-items: center;   background-color: #01b24a;  border-radius: 50%;  border: 2px solid white;   animation: subirDescer 3s infinite ease-in-out;   box-shadow: 0px 0px 25px #333;  transition: all .3s;  z-index: 61; order: 2; }
+#botao-whats #whats img { width: 35px; left: 1px; position: relative; z-index: 62; }
+#botao-whats #saiba { animation: subirDescer 3s infinite ease-in-out;  position: relative; right: -15px;background: #01B24A; padding: 8px 20px 8px 10px; border-radius: 10px 0px 0px 10px; color: white;  z-index: 60;  white-space: nowrap;  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); order: 1; }
+#botao-whats #saiba font {  color: white;  }
+@keyframes subirDescer { 0%, 100% {transform: translateY(0);}  50% {transform: translateY(-10px);} }
+
+#conteudo-interno #conteudo-404 {width:100%; margin-top:20px; }
+#conteudo-interno #conteudo-404 .titulo {color:#ff6801; text-align:center; font-weight:600; font-size:80px;}
+#conteudo-interno #conteudo-404 .descricao {color:#00355D; text-align:center; padding-bottom:10px; font-size:16px;}
+
+
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+/* Fundo da barra de rolagem */
+::-webkit-scrollbar-track-piece {
+    background-color: #06496E;
+}
+
+/* Cor do indicador de rolagem */
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: #fe6700
+}
+
+/* Cor do indicador de rolagem - ao passar o mouse */
+::-webkit-scrollbar-thumb:vertical:hover,
+::-webkit-scrollbar-thumb:horizontal:hover {
+    background-color: #ff8939
+}
+
+#paginacao {display:block; text-align:center; margin-top:10px;}
+#paginacao p{font-size:12px;}
+#paginacao strong{font-size:12px; color:#000;}
+#paginacao ul {height:30px; margin:10px auto 0; text-align:center;}
+#paginacao ul li {display:inline;}
+#paginacao ul li a {margin-right:5px; font-size:14px; border-radius:5px; border-bottom:1px solid #000; background-color:#06496e; padding:4px; transition:0.2s linear;}
+#paginacao ul li a:hover {background-color:#4b618c; transition:0.2s linear;}
+#paginacao a:link {color:#FFF;}
+#paginacao a:visited {color:#FFF;}
+#paginacao a:hover {color:#FFF;}
+#paginacao a:active {color:#000;}
+#paginacao span.branco  {margin-right:5px; font-size:14px; background-color:#fff; border-radius:5px; border:1px solid ; padding:4px;}

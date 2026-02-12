@@ -1,0 +1,19 @@
+{
+    "name": "openboleto/jasperphp-openboleto",
+    "type": "library",
+    "description": "Biblioteca para geração de boletos bancários.",
+    "keywords": ["boleto", "boleto bancario","jasper"],
+    "homepage": "http://github.com/openboleto/jasperphp-openboleto",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rogerio Muniz de Castro",
+            "email": "rogeriomunizcastro@gmai.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "openboleto/openboleto":"dev-master",
+        "quilhasoft/jasperphp":"dev-master"
+    }
+}

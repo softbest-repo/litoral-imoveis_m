@@ -1,0 +1,36 @@
+RewriteEngine On
+
+RewriteRule ^Sitemap\.xml$ geraSitemap.php [L]
+RewriteRule ^grupozap\.xml$ geraZap.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ /$1/ [L,R=301]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+ErrorDocument 404 https://".$_SERVER['HTTP_HOST']."/litoral-imoveis/
+
+
+
+
+RewriteRule ger\/$ ger/index.php
+RewriteRule ger(.+)\/$ ger/index.php
+RewriteRule ger(.+)/(.+)\/$ ger/index.php
+RewriteRule ger(.+)/(.+)/(.+)\/$ ger/index.php
+RewriteRule ger(.+)/(.+)/(.+)/(.+)\/$ ger/index.php
+RewriteRule ger(.+)/(.+)/(.+)/(.+)/(.+)\/$ ger/index.php
+RewriteRule ger(.+)/(.+)/(.+)/(.+)/(.+)/(.+)\/$ ger/index.php
+RewriteRule ger(.+)/(.+)/(.+)/(.+)/(.+)/(.+)/(.+)\/$ ger/index.php
+
+RewriteRule \/$ index.php
+RewriteRule (.+)\/$ index.php
+RewriteRule (.+)/(.+)\/$ index.php
+RewriteRule (.+)/(.+)/(.+)\/$ index.php
+RewriteRule (.+)/(.+)/(.+)/(.+)\/$ index.php
+RewriteRule (.+)/(.+)/(.+)/(.+)/(.+)\/$ index.php
+RewriteRule (.+)/(.+)/(.+)/(.+)/(.+)/(.+)\/$ index.php
+RewriteRule (.+)/(.+)/(.+)/(.+)/(.+)/(.+)/(.+)\/$ index.php

@@ -1,0 +1,67 @@
+ul {
+	list-style-type: none;
+}
+
+.container {
+	width: 870px;
+	border:1px solid #fff;
+	background-color:#fff;
+	margin: 0 auto;
+	height:237px;
+	margin-top:25px;
+}
+
+/* -------------------------------- */
+
+.circular_wrap {
+	position: relative;
+	width: 870px;
+	margin: 0 auto;
+	height:350px;
+	overflow:hidden;
+}
+
+#circular li {
+	float: left;
+	width: 245px;
+	height: 350px;
+	font-weight: bold;
+	margin-right:79px;
+	text-align: center;
+	overflow:hidden;
+}
+
+#circular li .imagem {
+	width:215px;
+	height:215px;
+	text-align:center;
+	overflow:hidden;
+	border-bottom:2px solid #3D4299;
+	background-color:white;
+	border-radius:100%;
+}
+
+#circular li .nome a {
+	width:215px;
+	font-size:18px;
+	text-align:center;
+	overflow:hidden;
+	color:#3D4299;
+	display:block;
+	padding-top:9px;
+	padding-left:5px;
+	padding-right:5px;
+	height:100px;
+	text-decoration:none;	
+	font-weight:normal;
+}
+
+#proximo {position:absolute; cursor:pointer; margin-left:875px; margin-top:-260px; width:70px; height:70px; background:#F58634 url('seta-dir.png') 16px 16px no-repeat; border-radius:100%; box-shadow:0px 0px 5px black; transition:0.2s linear;}
+#proximo:hover{position:absolute; cursor:pointer; margin-left:875px; margin-top:-260px; width:70px; height:70px; background-color:#EDA16B; border-radius:100%; box-shadow:0px 0px 5px black; transition:0.2s linear;}
+
+#anterior {position:absolute; cursor:pointer; margin-left:-75px; margin-top:-260px;width:70px; height:70px; background:#F58634 url('seta-esq.png') 16px 16px no-repeat; border-radius:100%; box-shadow:0px 0px 5px black; transition:0.2s linear;}
+#anterior:hover{position:absolute; cursor:pointer; margin-left:-75px; margin-top:-260px; width:70px; height:70px; background-color:#EDA16B; border-radius:100%; box-shadow:0px 0px 5px black; transition:0.2s linear;}
+
+
+
+.ver a {display:block; text-decoration:none; background:#046E04 url('mais-produtos.png') 7px center no-repeat; font-size:14px; padding:7px; padding-left:30px; padding-right:10px; color:#FFF; position:absolute; margin-left:325px; margin-top:15px;}
